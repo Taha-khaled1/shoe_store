@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الأحذية الأنيقة - اختر خطواتك بأناقة</title>
+    <meta name="description"
+        content="متجر إلكتروني متخصص في بيع الأحذية عالية الجودة لجميع الأذواق - رجالي، نسائي، رياضي، رسمي">
+
+    <!-- Google Fonts - Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/utilities.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="shoe-icon">
+                <i class="fas fa-shoe-prints"></i>
+            </div>
+            <h2>متجر الأحذية الأنيقة</h2>
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Header -->
+    <header class="desktop-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <i class="fas fa-shoe-prints"></i>
+                    <span>متجر الأحذية</span>
+                </div>
+
+                <!-- Main Navigation -->
+                <nav class="main-nav">
+                    <a href="#" class="nav-link active">الرئيسية</a>
+                    <a href="#" class="nav-link">رجالي</a>
+                    <a href="#" class="nav-link">نسائي</a>
+                    <a href="#" class="nav-link">رياضي</a>
+                    <a href="#" class="nav-link">رسمي</a>
+                    <a href="#" class="nav-link special">عروض</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <button class="action-btn search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="action-btn wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge">0</span>
+                    </button>
+                    <button class="action-btn cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </button>
+                    <button class="action-btn profile-btn">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-header-content">
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <i class="fas fa-shoe-prints"></i>
+                <span>متجر الأحذية</span>
+            </div>
+            <button class="search-toggle">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="logo">
+                    <i class="fas fa-shoe-prints"></i>
+                    <span>متجر الأحذية</span>
+                </div>
+                <button class="close-menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-menu-nav">
+                <a href="#" class="mobile-menu-item active">
+                    <i class="fas fa-home"></i>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="#" class="mobile-menu-item">
+                    <i class="fas fa-male"></i>
+                    <span>رجالي</span>
+                </a>
+                <a href="#" class="mobile-menu-item">
+                    <i class="fas fa-female"></i>
+                    <span>نسائي</span>
+                </a>
+                <a href="#" class="mobile-menu-item">
+                    <i class="fas fa-running"></i>
+                    <span>رياضي</span>
+                </a>
+                <a href="#" class="mobile-menu-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>رسمي</span>
+                </a>
+                <a href="#" class="mobile-menu-item special">
+                    <i class="fas fa-fire"></i>
+                    <span>عروض</span>
+                </a>
+            </nav>
+            <div class="mobile-menu-actions">
+                <button class="mobile-menu-btn wishlist-btn">
+                    <i class="fas fa-heart"></i>
+                    <span>المفضلة</span>
+                    <span class="badge">0</span>
+                </button>
+                <button class="mobile-menu-btn cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>السلة</span>
+                    <span class="badge">0</span>
+                </button>
+                <button class="mobile-menu-btn profile-btn">
+                    <i class="fas fa-user"></i>
+                    <span>حسابي</span>
+                </button>
+            </div>
+            <div class="mobile-menu-footer">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+966 12 345 6789</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@shoesstore.com</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-snapchat"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        <span>أفضل متجر أحذية 2024</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">اختر خطواتك</span>
+                        <span class="title-highlight">بأناقة</span>
+                    </h1>
+                    <p class="hero-subtitle">أحذية تُعبر عنك وتناسب جميع المناسبات</p>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary hero-btn-primary">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>تسوق الآن</span>
+                        </button>
+                        <button class="btn btn-secondary hero-btn-secondary">
+                            <i class="fas fa-eye"></i>
+                            <span>عرض المجموعات</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-image-container">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                            alt="أحذية أنيقة">
+                        <div class="hero-image-badge">
+                            <i class="fas fa-fire"></i>
+                            <span>الأكثر مبيعاً</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Features Bar -->
+            <div class="mobile-features-bar">
+                <div class="feature-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>شحن مجاني</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-undo"></i>
+                    <span>إرجاع مجاني</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>ضمان الجودة</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <div class="container">
+                <h2 class="section-title">تسوق حسب الفئة</h2>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                                alt="أحذية رجالية">
+                        </div>
+                        <div class="category-content">
+                            <h3>رجالي</h3>
+                            <p>أحذية أنيقة للرجال</p>
+                            <span class="category-count">+120 منتج</span>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                                alt="أحذية نسائية">
+                        </div>
+                        <div class="category-content">
+                            <h3>نسائي</h3>
+                            <p>أحذية عصرية للنساء</p>
+                            <span class="category-count">+150 منتج</span>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                                alt="أحذية رياضية">
+                        </div>
+                        <div class="category-content">
+                            <h3>رياضي</h3>
+                            <p>أحذية رياضية مريحة</p>
+                            <span class="category-count">+80 منتج</span>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                                alt="أحذية رسمية">
+                        </div>
+                        <div class="category-content">
+                            <h3>رسمي</h3>
+                            <p>أحذية رسمية فاخرة</p>
+                            <span class="category-count">+60 منتج</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-section">
+            <div class="container">
+                <h2 class="section-title">الأكثر مبيعًا</h2>
+                <div class="products-grid">
+                    <div class="product-card" data-product-id="1">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                                alt="حذاء جلد أنيق">
+                            <div class="product-actions">
+                                <button class="wishlist-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="quick-view-btn">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="product-badge">جديد</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">حذاء رياضي كلاسيكي</h3>
+                            <div class="product-price">
+                                <span class="current-price">299 ر.س</span>
+                                <span class="original-price">399 ر.س</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(128)</span>
+                            </div>
+                            <button class="add-to-cart-btn">أضف إلى السلة</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-id="2">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                                alt="حذاء رسمي جلدي">
+                            <div class="product-actions">
+                                <button class="wishlist-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="quick-view-btn">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="product-badge sale">خصم</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">حذاء رسمي جلدي</h3>
+                            <div class="product-price">
+                                <span class="current-price">450 ر.س</span>
+                                <span class="original-price">550 ر.س</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(89)</span>
+                            </div>
+                            <button class="add-to-cart-btn">أضف إلى السلة</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-id="3">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                                alt="حذاء نسائي عصري">
+                            <div class="product-actions">
+                                <button class="wishlist-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="quick-view-btn">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="product-badge">جديد</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">حذاء نسائي عصري</h3>
+                            <div class="product-price">
+                                <span class="current-price">199 ر.س</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(156)</span>
+                            </div>
+                            <button class="add-to-cart-btn">أضف إلى السلة</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-id="4">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                                alt="حذاء رجالي كاجوال">
+                            <div class="product-actions">
+                                <button class="wishlist-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="quick-view-btn">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="product-badge sale">خصم</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">حذاء رجالي كاجوال</h3>
+                            <div class="product-price">
+                                <span class="current-price">349 ر.س</span>
+                                <span class="original-price">449 ر.س</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(203)</span>
+                            </div>
+                            <button class="add-to-cart-btn">أضف إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-footer">
+                    <button class="btn btn-outline">عرض المزيد</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brands Section -->
+        <section class="brands-section">
+            <div class="container">
+                <h2 class="section-title">العلامات التجارية المميزة</h2>
+                <div class="brands-slider">
+                    <div class="brand-item">Nike</div>
+                    <div class="brand-item">Adidas</div>
+                    <div class="brand-item">Puma</div>
+                    <div class="brand-item">Reebok</div>
+                    <div class="brand-item">Converse</div>
+                    <div class="brand-item">Vans</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-shoe-prints"></i>
+                        <span>متجر الأحذية الأنيقة</span>
+                    </div>
+                    <p class="footer-description">
+                        متجر إلكتروني متخصص في بيع الأحذية عالية الجودة لجميع الأذواق والمناسبات. نوفر أفضل الماركات
+                        العالمية بأسعار مناسبة.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-snapchat"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">أحذية رجالية</a></li>
+                        <li><a href="#">أحذية نسائية</a></li>
+                        <li><a href="#">أحذية رياضية</a></li>
+                        <li><a href="#">أحذية رسمية</a></li>
+                        <li><a href="#">العروض الخاصة</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>خدمة العملاء</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">طرق الدفع</a></li>
+                        <li><a href="#">التوصيل والشحن</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+966 12 345 6789</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@shoesstore.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>الرياض، المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png"
+                        alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png"
+                        alt="Mastercard">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png"
+                        alt="Apple Pay">
+                </div>
+                <p class="copyright">
+                    © 2024 متجر الأحذية الأنيقة. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="#" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>الرئيسية</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-search"></i>
+            <span>بحث</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+            <span class="badge">0</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span>السلة</span>
+            <span class="badge">0</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>الحساب</span>
+        </a>
+    </nav>
+
+    <!-- Floating Chat Button -->
+    <div class="floating-chat">
+        <button class="chat-btn">
+            <i class="fas fa-comments"></i>
+            <span>تحدث معنا</span>
+        </button>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-content">
+            <div class="search-header">
+                <button class="close-search">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h3>البحث في المتجر</h3>
+            </div>
+            <div class="search-form">
+                <input type="text" placeholder="ابحث عن الأحذية..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="search-suggestions">
+                <h4>عمليات بحث شائعة</h4>
+                <div class="suggestion-tags">
+                    <span class="tag">أحذية رسمية</span>
+                    <span class="tag">سنيكرز</span>
+                    <span class="tag">أحذية للجري</span>
+                    <span class="tag">أحذية جلدية</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal-overlay" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-shopping-cart"></i> سلة التسوق</h2>
+                <button class="close-modal" id="closeCartModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items will be populated by JavaScript -->
+                </div>
+                <div class="cart-summary" id="cartSummary">
+                    <div class="summary-row">
+                        <span>المجموع الفرعي:</span>
+                        <span id="subtotal">0 ر.س</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>الضريبة:</span>
+                        <span id="tax">0 ر.س</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>الشحن:</span>
+                        <span id="shipping">مجاني</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>المجموع الكلي:</span>
+                        <span id="total">0 ر.س</span>
+                    </div>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn btn-outline" id="clearCart">إفراغ السلة</button>
+                    <button class="btn btn-primary" id="checkout">إتمام الطلب</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Favorites Modal -->
+    <div class="modal-overlay" id="favoritesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-heart"></i> المفضلة</h2>
+                <button class="close-modal" id="closeFavoritesModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="favorites-grid" id="favoritesGrid">
+                    <!-- Favorites items will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/storage.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
