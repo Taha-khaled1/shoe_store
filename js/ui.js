@@ -99,12 +99,20 @@ class UIManager {
         }
 
         this.showNotification('جاري البحث...', 'info');
-        
-        // Simulate search (replace with actual search logic)
+        console.log(`Searching for: ${query}`);
+        // Trigger search using the product manager
+        if (productManager) {  
+            productManager.searchProducts(query); 
+            productManager.scrollToFeaturedSection();    
+            this.closeSearch();
+            this.showNotification(`تم البحث عن: ${query}`, 'success');
+        } else {    
+            // Fallback if product manager is not available
         setTimeout(() => {
             this.showNotification(`تم البحث عن: ${query}`, 'success');
             this.closeSearch();
         }, 1000);
+        }
     }
 
     /**
@@ -172,14 +180,52 @@ class UIManager {
         // Handle mobile nav item clicks
         document.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', (e) => {
+                // Handle search button
+                if (item.querySelector('.fa-search')) {
+                    e.preventDefault();
+                    this.openSearch();
+                    return;
+                }
+                
+                // Handle favorites button
+                if (item.querySelector('.fa-heart')) {
+                    e.preventDefault();
+                    if (typeof favoritesManager !== 'undefined') {
+                        favoritesManager.openModal();
+                    }
+                    return;
+                }
+                
+                // Handle cart button
+                if (item.querySelector('.fa-shopping-cart')) {
+                    e.preventDefault();
+                    if (typeof cartManager !== 'undefined') {
+                        cartManager.openModal();
+                    }
+                    return;
+                }
+                
+                // Handle profile button
+                if (item.querySelector('.fa-user')) {
+                    e.preventDefault();
+                    this.showNotification('صفحة الملف الشخصي ستكون متاحة قريباً', 'info');
+                    return;
+                }
+                
                 // Remove active class from all items
                 document.querySelectorAll('.nav-item').forEach(navItem => {
                     navItem.classList.remove('active');
                 });
                 
-                // Add active class to clicked item
-                if (!item.querySelector('.fa-heart') && !item.querySelector('.fa-shopping-cart')) {
+                // Add active class to clicked item (home)
+                if (item.querySelector('.fa-home')) {
                     item.classList.add('active');
+                    if (window.productManager) {
+                        productManager.clearFilters();
+                        setTimeout(() => {
+                            productManager.scrollToFeaturedSection();
+                        }, 100);
+                    }
                 }
             });
         });
@@ -421,7 +467,37 @@ class UIManager {
                 }
             }
             
-
+            // Desktop navigation
+            if (e.target.closest('.nav-link')) {
+                e.preventDefault();
+                const navLink = e.target.closest('.nav-link');
+                const categoryId = navLink.dataset.categoryId;
+                const action = navLink.dataset.action;
+                
+                // Remove active class from all nav links
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                navLink.classList.add('active');
+                
+                // Handle navigation actions first
+                if (action === 'home' && window.productManager) {
+                    productManager.clearFilters();
+                } else if (action === 'offers' && window.productManager) {
+                    productManager.filterByOffers();
+                } else if (categoryId && window.productManager) {
+                    productManager.filterByCategory(categoryId);
+                }
+                
+                // Scroll to featured section (products) after a short delay
+                setTimeout(() => {
+                    if (window.productManager) {
+                        productManager.scrollToFeaturedSection();
+                    }
+                }, 100);
+            }
             
             if (e.target.closest('.profile-btn')) {
                 e.preventDefault();
@@ -495,18 +571,37 @@ class UIManager {
             // Mobile menu navigation
             if (e.target.closest('.mobile-menu-item')) {
                 const menuItem = e.target.closest('.mobile-menu-item');
-                if (!menuItem.classList.contains('special')) {
-                    // Remove active class from all items
-                    document.querySelectorAll('.mobile-menu-item').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    
-                    // Add active class to clicked item
-                    menuItem.classList.add('active');
-                    
-                    // Close menu after selection
-                    this.closeMobileMenu();
+                
+                // Remove active class from all items
+                document.querySelectorAll('.mobile-menu-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Add active class to clicked item
+                menuItem.classList.add('active');
+                
+                // Handle category filtering
+                const categoryId = menuItem.dataset.categoryId;
+                const action = menuItem.dataset.action;
+                
+                // Handle navigation actions first
+                if (action === 'home' && window.productManager) {
+                    productManager.clearFilters();
+                } else if (action === 'offers' && window.productManager) {
+                    productManager.filterByOffers();
+                } else if (categoryId && window.productManager) {
+                    productManager.filterByCategory(categoryId);
                 }
+                
+                // Close menu after selection
+                this.closeMobileMenu();
+                
+                // Scroll to featured section (products) after a short delay
+                setTimeout(() => {
+                    if (window.productManager) {
+                        productManager.scrollToFeaturedSection();
+                    }
+                }, 100);
             }
             
             // Mobile menu actions

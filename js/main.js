@@ -3,6 +3,7 @@
  * Initializes and coordinates all other modules
  */
 
+
 class ShoeStoreApp {
     constructor() {
         this.isInitialized = false;
@@ -63,7 +64,8 @@ class ShoeStoreApp {
             storage: storageManager,
             cart: cartManager,
             favorites: favoritesManager,
-            ui: uiManager
+            ui: uiManager,
+            products: productManager // API-based product manager
         };
 
         console.log('📦 All modules initialized');
@@ -102,36 +104,7 @@ class ShoeStoreApp {
         if (!sampleDataInitialized) {
             console.log('📝 Adding sample data for demo...');
             
-            // Sample products data
-            const sampleProducts = [
-                {
-                    id: '1',
-                    name: 'حذاء رياضي كلاسيكي',
-                    price: 299,
-                    originalPrice: 399,
-                    image: 'https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-                    rating: 4.5,
-                    reviewCount: 128
-                },
-                {
-                    id: '2',
-                    name: 'حذاء رسمي جلدي',
-                    price: 450,
-                    originalPrice: 550,
-                    image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-                    rating: 5,
-                    reviewCount: 89
-                }
-            ];
-            
-            // Add one item to cart and one to favorites for demo
-            if (this.modules.cart) {
-                this.modules.cart.addItem(sampleProducts[0], 1, { size: '42', color: 'أسود' });
-            }
-            
-            if (this.modules.favorites) {
-                this.modules.favorites.addItem(sampleProducts[1]);
-            }
+        
             
             // Mark sample data as initialized
             localStorage.setItem('shoe_store_sample_data_initialized', 'true');

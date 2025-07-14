@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الطلب - متجر الأحذية الأنيقة</title>
+    <meta name="description" content="إتمام عملية الشراء - متجر الأحذية الأنيقة">
+
+    <!-- Google Fonts - Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="css/utilities.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+
+
+    <!-- Desktop Header -->
+    <header class="desktop-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <i class="fas fa-shoe-prints"></i>
+                    <span>متجر الأحذية</span>
+                </div>
+
+                <!-- Main Navigation -->
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">الرئيسية</a>
+                    <a href="#" class="nav-link">رجالي</a>
+                    <a href="#" class="nav-link special">عروض</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <button class="action-btn search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="action-btn wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge">0</span>
+                    </button>
+                    <button class="action-btn cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </button>
+                    <button class="action-btn profile-btn">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-header-content">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <div class="page-title">
+                <span>إتمام الطلب</span>
+            </div>
+            <button class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="badge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Payment Section -->
+        <section class="payment-section">
+            <div class="container">
+
+
+                <div class="payment-container">
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <h3><i class="fas fa-receipt"></i> ملخص الطلب</h3>
+                        <div class="summary-content">
+                            <div class="cart-items-summary" id="cartItemsSummary">
+                                <!-- Cart items will be loaded here -->
+                            </div>
+                            <div class="summary-calculations">
+                                <div class="summary-row">
+                                    <span>المجموع الفرعي:</span>
+                                    <span id="subtotal">0 ر.س</span>
+                                </div>
+                                <!-- <div class="summary-row">
+                                    <span>الضريبة:</span>
+                                    <span id="shipping">مجاني</span>
+                                </div> -->
+                                <div class="summary-row tax-row" id="taxRow" style="display: none;">
+                                    <span>الشحن:</span>
+                                    <span id="tax">0 ر.س</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>المجموع الكلي:</span>
+                                    <span id="total">0 ر.س</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Form -->
+                    <div class="payment-form">
+                        <form id="paymentForm">
+                            <!-- Customer Information -->
+                            <div class="form-section">
+                                <h3><i class="fas fa-user"></i> معلومات العميل</h3>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="fullName">الاسم الكامل *</label>
+                                        <input type="text" id="fullName" name="fullName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">البريد الإلكتروني *</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">رقم الهاتف *</label>
+                                        <input type="tel" id="phone" name="phone" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Address Information -->
+                            <div class="form-section">
+                                <h3><i class="fas fa-map-marker-alt"></i> عنوان التوصيل</h3>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="country">الدولة *</label>
+                                        <select id="country" name="country" required>
+                                            <option value="">اختر الدولة</option>
+                                        </select>
+                                        <i class="fas fa-spinner loading-icon" id="countryLoading"
+                                            style="display: none;"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="governorate">المحافظة *</label>
+                                        <select id="governorate" name="governorate" required disabled>
+                                            <option value="">اختر المحافظة</option>
+                                        </select>
+                                        <i class="fas fa-spinner loading-icon" id="governorateLoading"
+                                            style="display: none;"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="city">المدينة *</label>
+                                        <select id="city" name="city" required disabled>
+                                            <option value="">اختر المدينة</option>
+                                        </select>
+                                        <i class="fas fa-spinner loading-icon" id="cityLoading"
+                                            style="display: none;"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="street">اسم الشارع</label>
+                                        <input type="text" id="street" name="street">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="building">رقم المبنى أو المنزل</label>
+                                        <input type="text" id="building" name="building">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Payment Method -->
+                            <div class="form-section">
+                                <h3><i class="fas fa-credit-card"></i> طريقة الدفع</h3>
+                                <div class="payment-methods">
+                                    <div class="payment-method">
+                                        <input type="radio" id="cod" name="paymentMethod" value="cod" checked>
+                                        <label for="cod">
+                                            <div class="method-icon">
+                                                <i class="fas fa-money-bill-wave"></i>
+                                            </div>
+                                            <div class="method-info">
+                                                <span class="method-name">الدفع عند الاستلام</span>
+                                                <span class="method-desc">ادفع عند وصول الطلب</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="payment-method">
+                                        <input type="radio" id="card" name="paymentMethod" value="card">
+                                        <label for="card">
+                                            <div class="method-icon">
+                                                <i class="fas fa-credit-card"></i>
+                                            </div>
+                                            <div class="method-info">
+                                                <span class="method-name">بطاقة ائتمان</span>
+                                                <span class="method-desc">فيزا، ماستركارد</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="payment-method">
+                                        <input type="radio" id="apple" name="paymentMethod" value="apple">
+                                        <label for="apple">
+                                            <div class="method-icon">
+                                                <i class="fab fa-apple-pay"></i>
+                                            </div>
+                                            <div class="method-info">
+                                                <span class="method-name">Apple Pay</span>
+                                                <span class="method-desc">دفع سريع وآمن</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-actions">
+                                <button type="submit" class="submit-btn" id="submitBtn">
+                                    <i class="fas fa-check"></i>
+                                    <span>إتمام الطلب</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-shoe-prints"></i>
+                        <span>متجر الأحذية الأنيقة</span>
+                    </div>
+                    <p class="footer-description">
+                        متجر إلكتروني متخصص في بيع الأحذية عالية الجودة لجميع الأذواق والمناسبات.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">أحذية رجالية</a></li>
+                        <li><a href="#">أحذية نسائية</a></li>
+                        <li><a href="#">أحذية رياضية</a></li>
+                        <li><a href="#">العروض الخاصة</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>خدمة العملاء</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">طرق الدفع</a></li>
+                        <li><a href="#">التوصيل والشحن</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+966 12 345 6789</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@shoesstore.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">
+                    © 2024 متجر الأحذية الأنيقة. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+
+</html>

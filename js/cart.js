@@ -408,14 +408,8 @@ class CartManager {
             return;
         }
 
-        // Simulate checkout process
-        this.showNotification('جاري معالجة الطلب...', 'info');
-        
-        setTimeout(() => {
-            this.showNotification('تم إتمام الطلب بنجاح!', 'success');
-            this.clearCart();
-            this.closeModal();
-        }, 2000);
+        // Navigate to payment page
+        window.location.href = 'payment.html';
     }
 
     /**

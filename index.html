@@ -58,9 +58,6 @@
                 <nav class="main-nav">
                     <a href="#" class="nav-link active">الرئيسية</a>
                     <a href="#" class="nav-link">رجالي</a>
-                    <a href="#" class="nav-link">نسائي</a>
-                    <a href="#" class="nav-link">رياضي</a>
-                    <a href="#" class="nav-link">رسمي</a>
                     <a href="#" class="nav-link special">عروض</a>
                 </nav>
 
@@ -185,56 +182,27 @@
     <main class="main-content">
         <!-- Hero Section -->
         <section class="hero-section">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <i class="fas fa-star"></i>
-                        <span>أفضل متجر أحذية 2024</span>
-                    </div>
-                    <h1 class="hero-title">
-                        <span class="title-line">اختر خطواتك</span>
-                        <span class="title-highlight">بأناقة</span>
-                    </h1>
-                    <p class="hero-subtitle">أحذية تُعبر عنك وتناسب جميع المناسبات</p>
-
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary hero-btn-primary">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span>تسوق الآن</span>
-                        </button>
-                        <button class="btn btn-secondary hero-btn-secondary">
-                            <i class="fas fa-eye"></i>
-                            <span>عرض المجموعات</span>
-                        </button>
+            <div class="hero-container">
+                <div class="banner-slider" id="bannerSlider">
+                    <!-- Banners will be loaded dynamically -->
+                    <div class="hero-loading">
+                        <i class="fas fa-spinner"></i>
+                        جاري تحميل العروض...
                     </div>
                 </div>
 
-                <div class="hero-image-container">
-                    <div class="hero-image">
-                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                            alt="أحذية أنيقة">
-                        <div class="hero-image-badge">
-                            <i class="fas fa-fire"></i>
-                            <span>الأكثر مبيعاً</span>
-                        </div>
-                    </div>
+                <!-- Slider Navigation -->
+                <div class="slider-nav" id="sliderNav">
+                    <!-- Navigation dots will be generated dynamically -->
                 </div>
-            </div>
 
-            <!-- Mobile Features Bar -->
-            <div class="mobile-features-bar">
-                <div class="feature-item">
-                    <i class="fas fa-shipping-fast"></i>
-                    <span>شحن مجاني</span>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-undo"></i>
-                    <span>إرجاع مجاني</span>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>ضمان الجودة</span>
-                </div>
+                <!-- Slider Arrows -->
+                <button class="slider-arrow prev" id="prevSlide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-arrow next" id="nextSlide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
 
@@ -255,41 +223,7 @@
                         </div>
                     </div>
 
-                    <div class="category-card">
-                        <div class="category-image">
-                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                                alt="أحذية نسائية">
-                        </div>
-                        <div class="category-content">
-                            <h3>نسائي</h3>
-                            <p>أحذية عصرية للنساء</p>
-                            <span class="category-count">+150 منتج</span>
-                        </div>
-                    </div>
 
-                    <div class="category-card">
-                        <div class="category-image">
-                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                                alt="أحذية رياضية">
-                        </div>
-                        <div class="category-content">
-                            <h3>رياضي</h3>
-                            <p>أحذية رياضية مريحة</p>
-                            <span class="category-count">+80 منتج</span>
-                        </div>
-                    </div>
-
-                    <div class="category-card">
-                        <div class="category-image">
-                            <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                                alt="أحذية رسمية">
-                        </div>
-                        <div class="category-content">
-                            <h3>رسمي</h3>
-                            <p>أحذية رسمية فاخرة</p>
-                            <span class="category-count">+60 منتج</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -331,100 +265,6 @@
                         </div>
                     </div>
 
-                    <div class="product-card" data-product-id="2">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                                alt="حذاء رسمي جلدي">
-                            <div class="product-actions">
-                                <button class="wishlist-btn">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <button class="quick-view-btn">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                            <div class="product-badge sale">خصم</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">حذاء رسمي جلدي</h3>
-                            <div class="product-price">
-                                <span class="current-price">450 ر.س</span>
-                                <span class="original-price">550 ر.س</span>
-                            </div>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span>(89)</span>
-                            </div>
-                            <button class="add-to-cart-btn">أضف إلى السلة</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card" data-product-id="3">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                                alt="حذاء نسائي عصري">
-                            <div class="product-actions">
-                                <button class="wishlist-btn">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <button class="quick-view-btn">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                            <div class="product-badge">جديد</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">حذاء نسائي عصري</h3>
-                            <div class="product-price">
-                                <span class="current-price">199 ر.س</span>
-                            </div>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span>(156)</span>
-                            </div>
-                            <button class="add-to-cart-btn">أضف إلى السلة</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card" data-product-id="4">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                                alt="حذاء رجالي كاجوال">
-                            <div class="product-actions">
-                                <button class="wishlist-btn">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <button class="quick-view-btn">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                            <div class="product-badge sale">خصم</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">حذاء رجالي كاجوال</h3>
-                            <div class="product-price">
-                                <span class="current-price">349 ر.س</span>
-                                <span class="original-price">449 ر.س</span>
-                            </div>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span>(203)</span>
-                            </div>
-                            <button class="add-to-cart-btn">أضف إلى السلة</button>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="section-footer">
@@ -653,7 +493,10 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="js/config.js"></script>
     <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/products.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/favorites.js"></script>
     <script src="js/ui.js"></script>
